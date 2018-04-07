@@ -1,0 +1,180 @@
+<!--pages/index/index.wxml-->
+<import src="../../components/Tips.wxml" />
+<template is="tips" data="{{isShow,title}}" />
+<view class='index-box'>
+  <view class='index-hd'>
+    <image class='hd-bg' src='../../icons/icons/beijing.png'></image>
+    <view class='nav-position' bindtap='openLocaltion'>
+      <image class='nav-mark' src='../../icons/icons/dingwei.png'></image>
+      <text class='nav-address'>{{currentAddress}}</text>
+      <image class='nav-arrow' src='../../icons/icons/down-arrow.png'></image>
+    </view>
+
+    <view class='m-search' data-nav-url='/pages/linesearch/linesearch' bindtap='navToPath'>
+      <view class='search-bg'></view>
+      <view class='search-bg-box'>
+        <view class='search-mark-box'>
+          <image class='search-mark' src='../../icons/icons/sousuo.png'></image>
+        </view>
+        <text class='search-line'>输入用户名/需求描述/用工地点</text>
+      </view>
+    </view>
+    <view class='swiper-box'>
+      <!-- <swiper class='m-swiper' indicator-dots="true" autoplay="false" interval="2000" duration="500">
+            <block wx:key="{{index}}" wx:for="{{bannerList}}" wx:for-index="idx" wx:for-item="banner">
+                <swiper-item>
+                  <image src='{{banner.url}}'></image>
+                </swiper-item>
+            </block>
+            </swiper> -->
+      <swiper class='m-swiper' indicator-dots="true" autoplay="false" interval="2000" duration="500">
+        <block>
+          <swiper-item>
+            <image src='../../icons/icons/chaoren_android.jpg'></image>
+          </swiper-item>
+          <swiper-item>
+            <image src='../../icons/icons/laosun_android.jpg'></image>
+          </swiper-item>
+          <swiper-item>
+            <image src='../../icons/icons/chaoren_android.jpg'></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class='swiper-footer'>
+      <image class='ft-img' src='../../icons/icons/swiper-footer.png'></image>
+    </view>
+    <view class='fill-color'></view>
+  </view>
+  <view class='index-bd' wx:if='{{isOpenLocaltion}}'>
+    <scroll-view scroll-x scroll-with-animation class='list-box'>
+      <view class='list-item active'>全部</view>
+      <view class='list-item'>种类一</view>
+      <view class='list-item'>种类二</view>
+      <view class='list-item'>种类三</view>
+      <view class='list-item'>种类四</view>
+      <view class='list-item'>种类五</view>
+      <view class='list-item'>种类六</view>
+      <view class='list-item'>种类七</view>
+    </scroll-view>
+    <scroll-view scroll-y style="height:{{windowHeight-100+'px'}}" bindscrolltolower='loadMore' bindscrolltoupper="refresh">
+      <view class='order'>
+        <view class='top'>
+          <image class='shop-icon' src="../../icons/icons/touxiang.png"></image>
+          <text class='company-name'>真枪实弹</text>
+          <text class='status'>类别一</text>
+        </view>
+        <view class='main' bindtap='goDetail'>
+          <view class='fisrt'>
+          <image src='../../icons/icons/head-2.jpg' class='list-img'></image>
+          <text>家里洗手间瓷砖坏了，需要修补，吧啦吧啦吧啦吧啦吧啦</text>
+          </view>
+          <view class='second'>
+            <text>2018-03-12 13：12</text>
+            <view>
+              <image src='../../icons/icons/dingwei_orange.png' class='dingwei_orange'></image>
+              <text>北京朝阳</text>
+            </view>
+          </view>
+        </view>
+        <view class='yufei'>
+          <text>预估费用：</text>
+          <text class='price'><text class='price-tag'>¥</text>1232</text>
+        </view>
+        <view class='bottom'>
+          <view bindtap='anthoerOrder' class='wuliu-track btn'>抢单</view>
+          <view bindtap='logisticsTrack' class='wuliu-track btn'>跟踪</view>
+        </view>
+      </view>
+      <view class='order'>
+        <view class='top'>
+          <image class='shop-icon' src="../../icons/icons/touxiang.png"></image>
+          <text class='company-name'>真枪实弹</text>
+          <text class='status'>类别一</text>
+        </view>
+        <view class='main' bindtap='goDetail'>
+          <view class='fisrt'>
+          <image src='../../icons/icons/head-2.jpg' class='list-img'></image>
+          <text>家里洗手间瓷砖坏了，需要修补，吧啦吧啦吧啦吧啦吧啦</text>
+          </view>
+          <view class='second'>
+            <text>2018-03-12 13：12</text>
+            <view>
+              <image src='../../icons/icons/dingwei_orange.png' class='dingwei_orange'></image>
+              <text>北京朝阳</text>
+            </view>
+          </view>
+        </view>
+        <view class='yufei'>
+          <text>预估费用：</text>
+          <text class='price'><text class='price-tag'>¥</text>1232</text>
+        </view>
+        <view class='bottom'>
+          <view bindtap='anthoerOrder' class='wuliu-track btn'>抢单</view>
+          <view bindtap='logisticsTrack' class='wuliu-track btn'>跟踪</view>
+        </view>
+      </view>
+      <view class='order'>
+        <view class='top'>
+          <image class='shop-icon' src="../../icons/icons/touxiang.png"></image>
+          <text class='company-name'>真枪实弹</text>
+          <text class='status'>类别一</text>
+        </view>
+        <view class='main' bindtap='goDetail'>
+          <view class='fisrt'>
+          <image src='../../icons/icons/head-2.jpg' class='list-img'></image>
+          <text>家里洗手间瓷砖坏了，需要修补，吧啦吧啦吧啦吧啦吧啦</text>
+          </view>
+          <view class='second'>
+            <text>2018-03-12 13：12</text>
+            <view>
+              <image src='../../icons/icons/dingwei_orange.png' class='dingwei_orange'></image>
+              <text>北京朝阳</text>
+            </view>
+          </view>
+        </view>
+        <view class='yufei'>
+          <text>预估费用：</text>
+          <text class='price'><text class='price-tag'>¥</text>1232</text>
+        </view>
+        <view class='bottom'>
+          <view bindtap='anthoerOrder' class='wuliu-track btn'>抢单</view>
+          <view bindtap='logisticsTrack' class='wuliu-track btn'>跟踪</view>
+        </view>
+      </view>
+      <view class='order'>
+        <view class='top'>
+          <image class='shop-icon' src="../../icons/icons/touxiang.png"></image>
+          <text class='company-name'>真枪实弹</text>
+          <text class='status'>类别一</text>
+        </view>
+        <view class='main' bindtap='goDetail'>
+          <view class='fisrt'>
+          <image src='../../icons/icons/head-2.jpg' class='list-img'></image>
+          <text>家里洗手间瓷砖坏了，需要修补，吧啦吧啦吧啦吧啦吧啦</text>
+          </view>
+          <view class='second'>
+            <text>2018-03-12 13：12</text>
+            <view>
+              <image src='../../icons/icons/dingwei_orange.png' class='dingwei_orange'></image>
+              <text>北京朝阳</text>
+            </view>
+          </view>
+        </view>
+        <view class='yufei'>
+          <text>预估费用：</text>
+          <text class='price'><text class='price-tag'>¥</text>1232</text>
+        </view>
+        <view class='bottom'>
+          <view bindtap='anthoerOrder' class='wuliu-track btn'>抢单</view>
+          <view bindtap='logisticsTrack' class='wuliu-track btn'>跟踪</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='is-local-box' wx:if='{{!isOpenLocaltion}}'>
+    <image class='line-bus-mark' src='../../icons/icons/weidingweikongbaiy@2x.png'></image>
+    <view class='tis'>我们会为您推荐</view>
+    <button size='mini' class='local-btn' bindtap='openSetting'>开启定位</button>
+  </view>
+</view>

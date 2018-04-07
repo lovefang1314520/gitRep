@@ -1,0 +1,23 @@
+<!--pages/ordersearch/ordersearch.wxml-->
+<import src="../../templates/OrderSearchBar.wxml" />
+<import src="../../components/Tips.wxml" />
+<view class='order-search'>
+    <template is="tips" data="{{isShow,title}}" />
+     <template is="order-search-bar" data="{{keywords:keywords}}"/>
+     <view class='searc-result' wx:if="{{historyShow}}">
+        <view class='result-list'>
+          <view class='result-item'>
+              <text>历史记录</text>
+              <text bindtap='clear'>清除</text>       
+            </view>
+            <view data-item="{{item}}" bindtap='setKeyWord' class='result-item' wx:for="{{history}}">
+            {{item}}           
+            </view>
+        </view>
+     </view>
+     <!-- <view class='no-route' wx:if="{{orders.length==0 && !historyShow}}">
+        <image src='../../icons/icons/noRoute.png'></image>
+        <view class='no-txt-b'>很抱歉!</view>
+        <view class='no-txt-s'>查不到该单号</view>
+     </view> -->
+</view>

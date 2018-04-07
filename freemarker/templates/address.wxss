@@ -1,0 +1,51 @@
+/** 三级联动 城市 */
+.citypickers{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+}
+.citypicker-bg{
+  position: absolute;top: 0;left: 0;height: 100%;background-color: #000;
+  opacity: 0.5;width: 100%;
+}
+.citybody {
+  position: fixed;
+  bottom: 0px;
+  background: #fff;
+}
+.citybody picker-view-column{
+  text-align: center;font-size: 30rpx;
+}
+.cityheader {
+  position: absolute;
+  top:0px;
+  width: 84%;
+  padding: 18rpx 8%;
+  z-index: 4;
+  background: #fff;
+  border-bottom: 1px #d9d9d9 solid;
+  border-top: 1px #d9d9d9 solid;
+}
+
+.city-cancel {
+  float: left;
+  color: #818181;
+  font-size: 30rpx;
+}
+
+.city-true {
+  float: right;
+  color: #ff8400;
+  font-size: 30rpx;
+}
+
+.section .picker {
+  background-color: #fff;
+  border-bottom: 1px #d9d9d9 solid;
+  border-top: 1px #d9d9d9 solid;
+  padding: 20rpx;
+}
+.tcity{
+  display: flex;justify-content: space-between;width: 90%;
+}

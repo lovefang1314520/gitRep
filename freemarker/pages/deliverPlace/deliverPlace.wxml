@@ -1,0 +1,32 @@
+<!--pages/deliverPlace/deliverPlace.wxml-->
+<view class='list'>
+  <view data-id='{{item.id}}' data-item="{{item}}" class='list-item' wx:for='{{listData}}' wx:key='id' bindtap='chooseAddr'>
+    <view class='info-box'>
+      <view class='info'>
+        <text class='name'>{{item.name}}</text>
+        <text class='tel'>{{item.tel}}</text>
+      </view>
+      <text class='addr'>
+      <text wx:if='{{item.province.includes(item.city)==false}}'>{{item.province}}</text>
+      {{item.city}}{{item.area}}{{item.other}}{{item.houseNum}}</text>
+    </view>
+    <view class='button-box'>
+      <view class='edit' catchtap='edit' data-id='{{item.id}}' data-item="{{item}}">
+        <image class='button-icon' src='../../icons/icons/bianji.png'></image>
+        <text class='button-text'>编辑</text>
+      </view>
+      <view class='del' catchtap='del' data-id='{{item.id}}'>
+        <image class='button-icon' src='../../icons/icons/shanchu.png'></image>
+        <text class='button-text'>删除</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='addbutton-box'>
+  <view class="add-button" bindtap='addAddr' wx:if='{{type=="sendAddress"}}'>新增发货地址</view>
+  <view class="add-button" bindtap='addAddr' wx:if='{{!(type=="sendAddress")}}'>新增收货地址</view>
+</view>
+ <view class='no-route' wx:if="{{listData.length==0}}">
+  <image class='route-img' src='../../icons/icons/noRoute.png'></image>
+  <view class='route-text'>您还没有添加地址</view>
+</view> 

@@ -1,0 +1,44 @@
+<!--pages/submitorderresult/submitorderresult.wxml-->
+<view class='submit-result-page'>
+     <view class='success-result' wx:if="{{result=='success'}}">
+         <image src='../../icons/icons/chenggong.png' class='success-icon result-icon'></image>
+         <text class='success-text'>恭喜您，订单提交成功！</text>
+         <view class='success-text-tips'>恭喜您，订单提交成功,正在等待承运商受理</view>
+         <view class='success-text-tips-small'>温馨提示：具体费用现场协商确定</view>
+         <view >
+         <view class='action-list'>
+             <view class='action-btn' bindtap='gotoOrderList'>查看订单</view>
+             <view class='action-btn' bindtap='gotoIndex'>返回首页</view></view>
+         </view>
+     </view>
+     <view class='success-result' wx:if="{{result=='paysuccess'}}">
+         <image src='../../icons/icons/chenggong.png' class='success-icon result-icon'></image>
+         <text class='success-text'>恭喜您，支付成功！</text>
+         <view class='success-text-tips'>您将获得一张随机抵用券，点击【我的】，【我的】优惠券即可查看</view>
+         <view >
+         <view class='action-list'>
+             <view class='action-btn' bindtap='gotoOrderList'>查看订单</view>
+             <view class='action-btn' bindtap='gotoIndex'>返回首页</view></view>
+         </view>
+     </view>
+       <view class='error-result' wx:if="{{result=='payfail'}}">
+         <image src='../../icons/icons/error.png' class='success-icon result-icon'></image>
+         <!-- <text class='error-text'>恭喜您，订单提交成功！</text> -->
+         <text class='error-text-tips'>系统开了小差，请稍后再试</text>
+         <view >
+         <view class='action-list'>
+             <view class='action-btn' bindtap='rePay'>重新支付</view>
+             <view class='action-btn' bindtap='gotoIndex'>放弃支付</view></view>
+         </view>
+     </view>
+      <view class='error-result' wx:if="{{result=='fail'}}">
+         <image src='../../icons/icons/error.png' class='success-icon result-icon'></image>
+         <!-- <text class='error-text'>恭喜您，订单提交成功！</text> -->
+         <text class='error-text-tips'>系统开了小差，请稍后再试</text>
+         <view >
+         <view class='action-list'>
+             <view class='action-btn' bindtap='reSubmit'>重新提交</view>
+             <view class='action-btn' bindtap='gotoIndex'>放弃交易</view></view>
+         </view>
+     </view>
+</view>

@@ -1,0 +1,136 @@
+<!--pages/orderdetail/orderdetail.wxml-->
+<wxs module="filters" src="../../common/filters.wxs"></wxs>
+
+<view class='detail-box'>
+  <view class='detail-tit'>
+    <text>{{orderStatus[oldOrder.orderStatus]}}</text>
+    <image src='../../icons/icons/yunshuzhong@2x.png'></image>
+  </view>
+  <view class='detail-num pd30'>
+    <view class='detail-item'>
+      <text class='detail-name'>订单号：</text>
+      <text class='detail-number'>{{orderData.orderNo}}</text>
+    </view>
+    <view class='detail-item mgtb20' wx:if='{{orderData.waybillNo}}'>
+      <text class='detail-name'>运单号：</text>
+      <text class='detail-number'>{{orderData.waybillNo}}</text>
+    </view>
+    <view class='detail-item'>
+      <text class='detail-name'>下单时间：</text>
+      <text class='detail-number'>{{orderData.submitTime}}</text>
+    </view>
+  </view>
+  <view class='address-box pd30 mgtb20'>
+    <view class='address-item'>
+      <image class='icon-qi' src='../../icons/icons/qi.png'></image>
+      <view class='address-detail'>
+        <view class="address-user">
+          <text class="address-name"> 发货人：{{orderData.consignerName}}</text> 
+          <text class='address-tel'>{{orderData.consignerMobile}}</text>
+        </view>
+        <text class='address-info'>
+          <text wx:if='{{!(orderData.consignerProvince.includes(orderData.consignerCity))}}'>{{orderData.consignerProvince}}</text>{{orderData.consignerCity}}{{orderData.consignerDistrict}}{{orderData.consignerAddr}}
+        </text>
+      </view>
+    </view>
+    <view class='border-bottom mgt24'></view>
+    <view class='address-item mgt30'>
+      <image class='icon-qi' src='../../icons/icons/zhong.png'></image>
+      <view class='address-detail'>
+        <view class="address-user">
+          <text class="address-name"> 收货人：{{orderData.consigneeName}}</text> 
+          <text class='address-tel'>{{orderData.consigneeMobile}}</text>
+        </view>
+        <text class='address-info'>
+          <text wx:if='{{!(orderData.consigneeProvince.includes(orderData.consigneeCity))}}'>{{orderData.consigneeProvince}}</text>{{orderData.consigneeCity}}{{orderData.consigneeDistrict}}{{orderData.consigneeAddr}}
+        </text>
+        </view>
+    </view>
+  </view>
+  <view class='detail-list-box pd30 mgtb20'>
+    <view class='detail-list'>
+      <text class='list-l-txt'>承运商</text>
+      <view class='list-r-box'>
+        <text class='list-r-txt'>{{orderData.providerName}}</text>
+        <image src='../../icons/icons/dianhua-red.png'></image>
+      </view>
+    </view>
+    <view class='border-bottom mgt30'></view>
+    <view class='detail-list mgt30'>
+      <view class='list-l-txt'>货物信息</view>
+      <text class='list-r-txt'>{{orderData.cargoName}},{{orderData.totalNum}}件,{{orderData.totalWeight}}kg,{{orderData.totalVolume}}m³,{{orderData.packing}}
+      </text>
+    </view>
+    <view class='border-bottom mgt30'></view>
+    <view class='detail-list mgt30'>
+      <view class='list-l-txt'>捎句话</view>
+      <text class='list-r-txt'>{{orderData.takeMessage ? orderData.takeMessage : '【无】'}}</text>
+    </view>
+  </view>
+  <view class='detail-list-box pd30 mgtb20'>
+    <view class='detail-list'>
+      <view class='list-l-txt'>代收货款</view>
+      <!-- <text class='list-r-txt'>{{filters.numFilter(orderData.codValue,2)}}元</text> -->
+      <view>
+        <text class='gray-price'>{{filters.numFilter(orderData.codValue,0)}}</text>
+        <text class='gray-zero'>{{filters.numFilter(orderData.codValue,1)}}</text>
+      </view>
+    </view>
+     <view class='border-bottom mgt30'></view>
+    <view class='detail-list mgt30'>
+      <view class='list-l-txt'>回单服务</view>
+      <text class='list-r-txt'>{{backSignbillType[orderData.backSignbillType -1]}}</text>
+    </view>
+  </view>
+  <view class='detail-list-box pd30 mgtb20'>
+    <view class='detail-list'>
+      <view class='list-l-txt'>提货方式</view>
+      <text class='list-r-txt' wx:if='{{orderData.pickup}}'>门店来取</text>
+      <text class='list-r-txt' wx:if='{{!orderData.pickup}}'>送到门店</text>
+    </view>
+     <view class='border-bottom mgt30'></view>
+    <view class='detail-list mgt30'>
+      <view class='list-l-txt'>配送方式</view>
+      <text class='list-r-txt' wx:if='{{orderData.deliverType ==1}}'>送货上门</text>
+      <text class='list-r-txt' wx:if='{{orderData.deliverType ==2}}'>客户自提</text>
+    </view>
+  </view>
+  <view class='detail-list-box pd30 mgtb20'>
+    <view class='detail-list'>
+      <view class='list-l-txt'>结算方式</view>
+      <text class='list-r-txt'>{{settleType[orderData.settleType]}}</text>
+    </view>
+  </view>
+  <view class='detail-list-box pd30 mgtb20'>
+    <view class='detail-list'>
+      <view class='list-l-txt'>费用合计</view>
+      <view>
+        <text class='gray'>￥</text>
+        <text class='gray-price'>{{filters.numFilter(orderData.totalFee+discount,0)}}</text>
+        <text class='gray-zero'>{{filters.numFilter(orderData.totalFee+discount,1)}}</text>
+      </view>
+    </view>
+    <view class='border-bottom mgt30'></view>
+    <view class='detail-list mgt30'>
+      <view class='list-l-txt'>优惠</view>
+      <view>
+        <text class='gray'>- ￥</text>
+        <text class='gray-price'>{{filters.numFilter(discount,0)}}</text>
+        <text class='gray-zero'>{{filters.numFilter(discount,1)}}</text>
+      </view>
+    </view>
+    <view class='border-bottom mgt30'></view>
+    <view class='detail-list mgt30'>
+      <view class='list-l-txt'>实付款</view>
+      <view>
+        <text class='symbol'>￥</text>
+        <text class='price'>{{filters.numFilter(orderData.totalFee,0)}}</text>
+        <text class='price-zero'>{{filters.numFilter(orderData.totalFee,1)}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='detail-btn-box'>
+    <view bindtap="logisticsTrack" class='detail-btn'>物流跟踪</view>
+  </view>
+
+</view>

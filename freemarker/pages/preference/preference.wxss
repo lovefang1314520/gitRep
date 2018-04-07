@@ -1,0 +1,87 @@
+/* pages/preference/preference.wxss */
+page{
+  width: 100%;height: 100%;background: #f9f9f9;overflow: hidden;
+}
+.coupon_box{
+  width: 100%;height: 100%;
+}
+.coupon_list{
+  margin-top: 20rpx;padding: 0 30rpx;
+}
+.coupon_item{
+  margin-top: 20rpx;display: flex;position: relative;
+}
+.coupon_item:first-of-type{
+  margin-top: 0;
+}
+.coupon_img image{
+  width: 230rpx;height: 200rpx;
+}
+.coupon_img .coupon_price{
+  position: absolute;top: 50%;left: 0;display: flex;flex-direction: column;
+  justify-content: space-around;width: 100%;text-align: center;color: #fff;
+  margin-top: -83rpx;
+}
+.coupon_img .coupon_price .f40{
+  font-size: 40rpx;
+}
+.coupon_img .coupon_price .f80{
+  font-size: 80rpx;
+}
+.coupon_img .coupon_price .tis{
+  font-size: 24rpx;color: #fff;
+}
+.coupon_item .coupon_img{
+  width: 230rpx;position: relative;display: flex;flex-direction: column;align-items: center;
+}
+.coupon_item .coupon_right{
+  flex: 1;background-color: #fff;border-top-right-radius: 8rpx;       border-bottom-right-radius: 8rpx;padding: 23rpx 19rpx;height: 156rpx;
+  overflow: hidden;
+}
+.coupon_item .checked{
+  position: absolute;top: 30rpx;right: 30rpx;width: 46rpx;height: 46rpx;
+}
+.coupon_right .cou_2{
+  margin-top: 14rpx;line-height: 28rpx;
+}
+.coupon_right .cou_3{
+  margin-top: 16rpx;line-height: 28rpx;
+}
+.coupon_ft{
+  width: 56%;
+  position: fixed;
+  bottom: 46rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 24%;
+}
+.coupon_ft .sx-coup{
+  margin-left: 20rpx;
+  border-left: 1px solid #999;
+  padding-left: 19rpx;
+  line-height:24rpx;
+}
+.coupon_ft .sx-coup image{
+  width: 10rpx;height: 17rpx;
+}
+.none-coupon{
+  margin-top: 100rpx;width: 100%;
+}
+.none-cmark-box{
+  display: flex;justify-content: center;
+}
+.none-cmark{
+  width: 358rpx;height: 248rpx;
+}
+.none-coupon .tis{
+  text-align: center;margin-top: 22rpx;
+}
+
+.ft32{font-size: 32rpx;}
+.ft28{font-size: 28rpx;}
+.ft24{font-size: 24rpx;}
+.ft20{font-size: 20rpx;}
+.c333333{color: #333333;}
+.c666666{color: #666666;}
+.disabled{opacity:.2;}

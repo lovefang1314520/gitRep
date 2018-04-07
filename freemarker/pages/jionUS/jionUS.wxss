@@ -1,0 +1,100 @@
+/* pages/jionUS/jionUS.wxss */
+@import "../../templates/address.wxss";
+
+page{
+  background-color: #f5f5f5;
+  font-size: 28rpx;
+}
+.list{
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  border-top: 1rpx solid #e6e6e6;
+}
+.list-item{
+  border-bottom: 1rpx solid #e6e6e6;
+  padding: 30rpx;
+  padding-left: 0;
+  margin-left: 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.list-text{
+  font-size: 28rpx;
+  color: #333;
+  vertical-align: middle;
+}
+.img{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+.title{
+  background-color: #fff;
+  padding:30rpx;
+  font-size: 30rpx;
+}
+.radio{
+  margin-right: 15rpx;
+}
+.show{
+  display: inline-block;
+}
+.hide{
+  display: none;
+}
+.orange{
+  color: #fff;
+  background-color: #ff8400;
+  border: none;
+}
+.border-none{
+  border: none;
+}
+.region-icon{
+ width: 44rpx;
+  height: 44rpx;
+  vertical-align:middle;
+
+}
+.region-text{
+  margin-right: 15rpx;
+  vertical-align: middle;
+}
+.region-text{
+  color: #999;
+}
+.region-item{
+  margin-right: 15rpx;
+}
+.left-img{
+  margin-left: 15rpx;
+}
+.text-orange{
+  color: #ff8400;
+}
+.confirm{
+  width:690rpx;
+  height: 88rpx;
+  margin: 0 auto 50rpx;
+  color: #999;
+  font-size: 36rpx;
+  border-radius: 10rpx;
+}
+.confirm::after{
+  border: none;
+}
+.confirm.orange{
+  color: #fff;
+  background-color: #ff8400;
+  border: 1rpx solid #ff8400;
+}
+.service-tel{
+  text-align: center;
+  font-size: 22rpx;
+   color: #666;
+   margin-bottom: 33rpx;
+}
+.tel-img{
+  width: 32rpx;
+  height: 40rpx;
+}

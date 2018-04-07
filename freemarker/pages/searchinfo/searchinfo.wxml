@@ -1,0 +1,69 @@
+<!--pages/searchinfo/searchinfo.wxml-->
+<wxs src="../../common/hourstoday.wxs" module="hourstoday" />
+<view class='search-box'>
+  <view class='search-info' wx-if="{{lineResult.length>0}}">
+    <view class='search-bg'>
+      <image class='search-mark' src='../../icons/icons/sousuo-hui.png'></image>
+      <view class='start-addr' data-addr='{{true}}' bindtap="open">
+        {{startAddress}}
+      </view>
+      <image class='flew-mark' src='../../icons/icons/dizhiqiehuan.png'></image>
+      <view class='end-addr' data-addr='{{false}}' bindtap="open">{{endAddress}}</view>
+    </view>
+    <text class='tapsearch'>查询</text>
+  </view>
+  <view class='search-results' wx-if="{{lineResult.length>0}}">
+    <view class='res-list'>
+      <view class='res-item' wx:key="{{index}}" wx:for="{{lineResult}}" wx:for-index="idx" wx:for-item="lineRes">
+        <view class='tis'>
+          <image src='../../icons/icons/dianpu.png'></image>
+          <text>{{lineRes.companyName}}</text>
+        </view>
+        <view class='info'>
+          <view class='info-1'>普通</view>
+          <text class='info-2'>{{lineRes.startStationName}}</text>
+          <view class='info-3'>
+            <image src='../../icons/icons/xianlujiantou.png'></image>
+            <text>{{hourstoday.today(lineRes.transDuration)}}天{{hourstoday.toHourFix(lineRes.transDuration)}}小时</text>
+          </view>
+          <view class='info-4'>
+            <view>{{lineRes.endStationName}}</view>
+            <view class='beizhu' wx:if="{{lineRes.isCoverageProvince}}">（{{lineRes.endStationName}}全境）</view>
+          </view>
+        </view>
+        <view class='status'>
+          <text decode="{{true}}">价格：{{lineRes.weightPrice}}元／千克起  &nbsp;&nbsp;&nbsp;{{lineRes.volumnPrice}}元／方起</text>
+          <view class='btns'>
+            <view class='btn' data-order-obj='{{lineRes}}' data-nav-url='/pages/writeorder/writeorder?source=searchinfo' data-form-url='/pages/searchinfo/searchinfo?' bindtap='navToPath'>下单</view>
+          </view>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+
+  <view class='has-non-result' wx-if="{{lineResult.length<1}}">
+    <image src='../../icons/icons/noRoute.png'></image>
+    <text class='beizhu1'>很抱歉</text>
+    <text class='beizhu2'>暂时没有相关路线</text>
+  </view>
+</view>
+
+<view wx:if="{{condition}}" class="citypicker-bg"></view>
+<view wx:if="{{condition}}" class="citypicker">
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
+    <view class="cityheader">
+      <view bindtap="cancle" class="city-cancel">取消</view>
+      <view bindtap="save" class="city-true">确定</view>
+    </view>
+    <picker-view-column>
+      <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>

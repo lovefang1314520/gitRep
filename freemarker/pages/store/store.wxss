@@ -1,0 +1,131 @@
+/* pages/store/store.wxss */
+page{
+  width: 100%;background-color: #f9f9f9;
+}
+.store-box{
+  padding-bottom: 50rpx;
+}
+.store-hd{
+  background-color: #ff8400;position: relative;padding-bottom: 40rpx;
+}
+.store-hd .info{
+  display: flex;padding: 60rpx 40rpx;flex: 1;
+}
+.info image{
+  width: 130rpx;height: 130rpx;border-radius: 50%;
+}
+.info .business{
+  margin-left: 30rpx;font-size: 32rpx;color: #fff;display: flex;flex-direction: column;justify-content: space-around;
+}
+.info .concat{
+  display: flex;align-items: center;
+}
+.info .small-phone-mark{
+  width: 20rpx;height: 25rpx;border-radius: 0;margin-right: 10rpx;
+}
+.info .lianxi{
+  width: 90rpx;height: 40rpx;border-radius: 0;margin-left: 20rpx;
+}
+.info .lx-box{
+  position: relative;
+}
+.info .lx-box text{
+  position: absolute;top: 50%;left: 50%;margin-top: -20rpx;margin-left: -25rpx;
+  font-size: 22rpx;color: #666;
+}
+.store-hd .detail{
+  margin: 0 20rpx;background-color: #fff;color: #666;font-size: 28rpx;
+  border-radius: 8rpx;box-shadow: 1rpx 1rpx 2rpx #eaeaea;position: absolute;
+  bottom: -275rpx;padding: 30rpx;
+}
+.store-hd .detail .d-box{
+  display: flex;
+}
+.d-box{
+  margin-top: 26rpx;
+}
+.d-box:first-of-type{
+  margin-top: 0;
+}
+.d-box .d-tis{
+  margin-right: 6rpx;
+}
+.d-box .d-cons{
+  flex: 1;
+}
+.store-bd{
+  margin-top: 274rpx;
+}
+.line-names{
+  padding: 30rpx;font-size: 32rpx;color: #333;display: flex;
+  justify-content: space-between;
+}
+.product-num{
+  color: #ff8400;font-size: 26rpx;
+}
+.ts_tags{
+  display: flex;justify-content: flex-start;width: 500rpx;
+}
+.ts_tags .ts_tag{
+  background-color: #ffecd9;font-size: 24rpx;color: #666;padding: 4rpx 6rpx;margin-left: 10rpx;
+  border-radius: 4rpx;
+}
+.ts_tags .ts_tag:first-of-type{margin-left: 0}
+
+.res-list{
+  width: 100%;margin-bottom: 20rpx;
+}
+.res-item{
+  width: 100%;display: flex;flex-direction: column;margin-top: 20rpx;background-color: #fff;
+}
+.res-item:first-of-type{
+  margin-top: 0;
+}
+.res-item .tis{
+  height: 76rpx;border-bottom: 1px solid #e6e6e6;display: flex;align-items: center;
+  padding: 0 30rpx;
+}
+.res-item .tis image{
+  width: 36rpx;height: 32rpx;margin-right: 14rpx;
+}
+.res-item .tis text{
+  font-size: 30rpx;color: #333;
+}
+.res-item .info{
+  padding: 30rpx 40rpx;display: flex;flex-direction: row;align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+}
+.res-item .info .info-1{
+  width: 48rpx;height: 30rpx;color: #ff8400;font-size: 20rpx;text-align: center;
+  border: 1px solid #ff8400;border-radius: 4rpx;line-height: 30rpx;
+}
+.res-item .info .info-2{
+  font-size: 30rpx;color: #333;margin-left: 20rpx;
+}
+.res-item .info .info-3{
+  margin: auto;position: relative;
+}
+.res-item .info .info-4{
+  
+}
+.res-item .info .info-3 image{
+  width: 160rpx;height: 26rpx;border-radius: 0;
+}
+.res-item .info .info-3 text{
+  font-size: 20rpx;color: #666;position: absolute;top: 50%;left: 50%;margin-top: -16rpx;margin-left: -44rpx;
+}
+.res-item .info .info-4 view{
+  font-size: 30rpx;color: #333;
+}
+.res-item .info .info-4 .beizhu{
+  font-size: 24rpx;color: #666;text-align: right;margin-top: 16rpx;
+}
+.res-item .status{
+  display: flex;height: 80rpx;align-items: center;padding: 0 30rpx;
+} 
+.res-item .status text{
+  font-size: 28rpx;color: #333;flex: 1;
+}
+.btns .btn{
+  width: 120rpx;height: 50rpx;background-color: #ff8400;color: #fff;font-size: 28rpx;line-height: 50rpx;text-align: center;border-radius: 8rpx;
+}

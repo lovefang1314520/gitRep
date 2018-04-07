@@ -1,0 +1,69 @@
+<!--pages/goodsinfo/goodsinfo.wxml-->
+<import src="../../components/Tips.wxml" />
+<view class='goods-info'>
+  <template is="tips" data="{{isShow,title}}" />
+ <view class='m-t-22 section'>
+    <view class='item'   >
+      <text>货物名称</text>
+       <input   bindinput='bindinput' data-fieldname="cargoName"  class="value" wx:if="{{select_GOODS_NAME=='其他'}}"/>
+       <text class='value' wx:if="{{select_GOODS_NAME!='其他'}}">{{select_GOODS_NAME}}</text>
+      <image data-title="货物名称" src='../../icons/icons/youjiantou.png' class='right-arrow' data-modaltype="GOODS_NAME" bindtap='showModal'></image>
+    </view>
+    <view class='item'>
+      <text>货物数量</text>
+      <input type='number' bindinput='bindinput' data-fieldname="totalNum"  value="{{totalNum}}" class="value" />
+     <text class='price-unit'>件</text> 
+    </view>
+     <view class='item'>
+      <text>重量</text>
+      <input  type='number'  bindinput='bindinput' data-fieldname="totalWeight" value="{{totalWeight}}" class="value"/>
+     <text class='price-unit'>公斤</text> 
+    </view>
+     <view class='item'>
+      <text>体积</text>
+       <input  type='number' bindinput='bindinput' data-fieldname="totalVolume" value="{{totalVolume}}" class="value"/>
+      <text class='price-unit'>方</text> 
+    </view>
+  </view>
+    <view class='m-t-22 section'>
+    <view class='item' >
+      <text>货物类型</text>
+      <text class='value'>{{select_GOODS_TYPE}}</text>
+      <image data-title="货物类型" data-modaltype="GOODS_TYPE" bindtap='showModal' src='../../icons/icons/youjiantou.png' class='right-arrow'></image>
+    </view>
+    <view class='item' >
+      <text>包装类型</text>
+      <text class='value'>{{ select_WRAP_TYPE }}</text>
+      <image data-title="包装类型" data-modaltype="packing" bindtap='showModal' src='../../icons/icons/youjiantou.png' class='right-arrow'></image>
+    </view>
+  </view>
+  <view class='m-t-22 section'>
+    <view class='item'  >
+      <view>声明价值
+       <image bindtap='showModalTwo' class='wenhao-icon' src='../../icons/icons/shengmingjiazhi@2x.png'/></view>
+         <input type='number' bindinput='bindinput' data-fieldname="declaredValue" value="{{declaredValue}}" class="value"/>
+      <text class='price-unit'>元</text>
+       
+    </view>
+  </view>
+  <view class='save-order' bindtap='saveOrder'>
+     保存
+  </view>
+  <view class='modal-wrapper' bindtap='closeModal' wx:if="{{isShowModal||isShowModalTwo}}"></view>
+  <view class='modal modal-2' wx:if="{{isShowModalTwo}}">
+   <view class='title'>声明价值</view>
+   <view class='content'>
+  记录货物声明价值，平台不收取保价费，保价服
+务请与承运商联系
+</view>
+  </view>
+  <view class='modal' wx:if="{{isShowModal}}">
+      <view class='title'>
+      <text>{{title}}</text>
+      <image bindtap='closeModal' class='close-icon' src='../../icons/icons/guanbi@2x.png'/></view>
+      
+      <view class='content'>
+          <view class='{{activeitem==item?"active item":"item"}}' data-item="{{item}}" data-index="{{index}}" bindtap='setActiveItem' wx:for="{{modalList}}"><text>{{item}}</text></view>
+      </view>
+  </view>
+</view>

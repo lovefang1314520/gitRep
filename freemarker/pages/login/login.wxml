@@ -1,0 +1,27 @@
+<import src="../../components/Tips.wxml" />
+<view class="login-box">
+  <template is="tips" data="{{isShow,title}}" />
+  <form bindsubmit='formSubmit' report-submit='true'>
+    <view class="login-row">
+      <text>手机号</text>
+      <input type="number" name='telephone' value="{{telephone}}"  bindinput='bindinput'  data-name='telephone' placeholder='请输入手机号' bindfocus='mobileFocus' bindblur='mobileBlur'  />
+      <image src='../../icons/icons/shurukuangshanchu@2x.png' class="close-button {{showCloseButton?'show':'hide'}}" bindtap='resetMobile' />
+    </view>
+    <view class="login-row code-box">
+      <text>验证码</text>
+      <input type="number" bindinput='bindinput'   data-name='code' placeholder='请输入验证码'  />
+      <button  class="code-button  {{(telFlg&&getCodeFlg)?'orange':''}}" bindtap='getRegCode' type='default'>{{!getCodeFlg?maxCount+'s':getCodeText}}</button>
+    </view>
+    <view class='checkbox-box'>
+      <image class='checkbox-item' wx:if='{{isChecked}}' mode='aspectFill' src='../../icons/icons/yigouxuan@2x.png' data-checked="true"          bindtap='checkClick' />
+      <image class='checkbox-item' wx:else  mode='aspectFill' src='../../icons/icons/weigouxuan@2x.png' data-checked="false"                     bindtap='checkClick' />
+      <view class='text-box'>
+        <text class="gray-text">阅读并同意</text>
+        <text class='register-text' bindtap='goRegisterText'>《注册协议条款》</text>
+      </view>
+    </view>
+    <button wx:if='{{!(telFlg && codeFlg && isChecked)}}' class='login-confirm'>登录</button>
+    <button formType="submit" wx:if='{{telFlg && codeFlg && isChecked}}' class='login-confirm orange'>登录</button>
+  </form>
+  <text class='service-tel'>客服电话：  XXX-123-123</text>
+</view>

@@ -1,0 +1,72 @@
+/* pages/submitorderresult/submitorderresult.wxss */
+.success-result{
+margin-top: 70rpx;
+}
+.result-icon{
+  width:120rpx;
+  height:120rpx;
+  margin: 0 auto;
+  display: block;
+}
+.success-text{
+  font-size: 32rpx;
+  color:#09bb07;
+  font-weight: 600;
+  text-align: center;
+  display: block;
+  margin-top: 42rpx;
+}
+.success-text-tips{
+  color:#666;
+  font-size: 24rpx;
+  text-align: center;
+  margin-top:40rpx;
+}
+.success-text-tips-small{
+  color:#999;
+  font-size: 24rpx;
+  text-align: center;
+  margin-top:22rpx;
+}
+.action-list{
+  display: flex;
+   width:690rpx;
+  margin: 0 auto;
+   margin-top:88rpx;
+}
+.action-btn{
+  
+ width:330rpx;
+  border:1rpx solid #ccc;
+  text-align: center;
+  font-size: 32rpx;
+  color:#666;
+  font-weight: 600;
+  height:80rpx;
+  line-height: 80rpx;
+  border-radius: 8rpx;
+  background: #fbfafc;
+}
+.action-btn:first-child{
+  margin-right: 30rpx;
+}
+.error-result{
+  margin-top: 70rpx;
+}
+.error-text{
+  font-size: 32rpx;
+  color: #fd5754;
+  text-align: center;
+  display: block;
+  margin-top:40rpx; 
+}
+.error-text-tips{
+  font-size: 24rpx;
+  color: #666;
+    text-align: center;
+    display: block;
+     margin-top:30rpx; 
+}
+.error-result .action-list{
+  margin-top:60rpx; 
+}

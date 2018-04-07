@@ -1,0 +1,17 @@
+<!--pages/somewords/somewords.wxml-->
+<import src="../../components/Tips.wxml" />
+<view class='some-words'>
+ <template is="tips" data="{{isShow,title}}" />
+   <view class='remark-info'>
+    <view class='remarks'>
+       <view bindtap='setActiveItem' data-activeitem="{{item}}" class='{{activeitem==item?"active  remark-item":"remark-item"}}' wx:for="{{REMARKS}}">
+       {{item}}
+       </view>
+         
+    </view>
+   <textarea maxlength="200" bindinput='bindinput' value="{{somewords}}" placeholder="">
+       <text class='remain-label'>{{somewords.length||0}}/200</text>
+       </textarea>
+    </view>
+    <view bindtap='saveSomeWords' class='submit-button'>保存</view>
+</view>

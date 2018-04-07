@@ -1,0 +1,44 @@
+<!--pages/linesearch/linesearch.wxml-->
+<view class='search-box'>
+  <view class='search-info'>
+    <view class='search-bg'>
+      <image class='search-mark' src='../../icons/icons/sousuo-hui.png'></image>
+      <view class='start-addr' data-addr='{{true}}' bindtap="open">
+        {{startAddress}}
+      </view>
+      <image class='flew-mark' src='../../icons/icons/dizhiqiehuan.png'></image>
+      <view class='end-addr' data-addr='{{false}}' bindtap="open">{{endAddress}}</view>
+    </view>
+    <text class='tapsearch' bindtap='search'>查询</text>
+  </view>
+  <view class='search-content'>
+    <view class='tis'>
+      <text>历史记录</text>
+      <text bindtap='clearStorage'>清除</text>
+    </view>
+    <view class='search-history' wx:key="{{index}}" wx:for="{{lineHistory}}" wx:for-index="idx" wx:for-item="lHistory">
+      <view class='search-item' bindtap='changeAddress' data-start="{{lHistory.sAddress}}" data-end='{{lHistory.eAddress}}' data-scode='{{lHistory.sCode}}' data-ecode='{{lHistory.eCode}}'>
+        {{lHistory.sAddress}} --- {{lHistory.eAddress}}
+      </view>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{condition}}" class="citypicker-bg"></view>
+<view wx:if="{{condition}}" class="citypicker">
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
+    <view class="cityheader">
+      <view bindtap="cancle" class="city-cancel">取消</view>
+      <view bindtap="save" class="city-true">确定</view>
+    </view>
+    <picker-view-column>
+      <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>

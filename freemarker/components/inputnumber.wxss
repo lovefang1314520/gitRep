@@ -1,0 +1,88 @@
+.input-number {
+    display: flex;
+    flex-direction: rows;
+   
+}
+
+.input-number-icon {
+    width: 40rpx;
+    height: 40rpx;
+    background-color: #f6cc32;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:50%; 
+    padding:4rpx;
+}
+
+.input-number-icon-img {
+    width: 30rpx!important;
+    height: 30rpx!important;
+}
+
+.sub-wrapper{
+   background-color: #fff;
+    box-shadow: 0 2px 2px #e8e5e5;
+    position: relative;
+}
+.add-wrapper{
+   background-color: #fc0;
+  box-shadow: 0 2rpx 2rpx #fdeaa2;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+}
+.shape-btn {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 2px;
+    position: absolute;
+    background-color: #222;
+    top: 0;
+    bottom: 0;
+    left: 12rpx;
+    right: 0;
+    margin: auto 0;
+    border-radius: 2px
+}
+.add-wrapper .add-vert {
+    content: '';
+    width: 12px;
+    display: inline-block;
+    position: absolute;
+    height: 2px;
+    background: #222;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    top: 0;
+    bottom: 0;
+    left: 12rpx;
+    right: 0;
+    margin: auto 0;
+    border-radius: 2px
+}
+.product-btn{
+  display: inline-block;
+  background-color: #ffd600;
+  padding: 0 30px;
+  border-radius:3px; 
+  height:70rpx;
+  font-size: 35rpx;
+  line-height: 70rpx;
+}
+.input-number-input {
+   
+    color: #222;
+    font-size: 28rpx;
+    /* border-top: 1px #d2d2d2 solid;
+    border-bottom: 1px #d2d2d2 solid; */
+    border:0;
+    text-align: center;
+    line-height: 50rpx;
+    padding-right: 20rpx;
+    padding-left: 20rpx;
+}

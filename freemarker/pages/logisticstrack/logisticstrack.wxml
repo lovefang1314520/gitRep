@@ -1,0 +1,35 @@
+<!--pages/logisticstrack/logisticstrack.wxml-->
+<view class='logisticstrack-page'>
+  <view class='brief'>
+    <view class='info'>
+      <text>承运方：</text>
+      <text>{{sendNetworkName}}</text>
+    </view>
+    <view>
+      <text>运单号：</text>
+      <text>{{orderNo}}</text>
+      <text class='status'>{{statusFilter[orderStatus]}}</text>
+    </view>
+  </view>
+  <view class='logisticstrack-detail'>
+    <view class='guiji'>
+      <view class='item' wx:for="{{data}}">
+       <view class='line'>
+        </view>
+      <view class="{{index==0?'active point':'point'}}"></view>
+        
+        <view class='content'>
+       
+          <view class='conten-inner'>
+            <view class='title'>
+              {{item.traceMessage}}
+            </view>
+            <view class='date'>
+              {{item.inputTime}}
+            </view>
+          </view>
+        </view>
+      </view>
+       </view>
+  </view>
+</view>

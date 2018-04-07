@@ -1,0 +1,43 @@
+<wxs module="filters" src="../common/filters.wxs"></wxs>
+<template name="order">
+    <view class='order'>
+        <view class='top'>
+           <image class='shop-icon' src="../../icons/icons/dianpu.png"></image>
+           <text class='company-name'>{{order.providerName}}</text>
+           <text class='status'>{{orderStatusDict[order.orderStatus]}}</text>
+        </view>
+        <view class='main' bindtap='goDetail' data-no='{{order.orderNo}}'>
+           <view class='fisrt'>
+               <view class='start-point point'><text class='province'>{{order.consignerCity}}</text><text class='city'>{{order.consignerDistrict}}</text></view>
+               <view class='middle-tag'>
+                  <image src='../../icons/icons/jiantou@2x.png'/>
+               </view>
+               <view class='end-point point'><text class='province'>{{order.consigneeCity}}</text><text class='city'>{{order.consigneeDistrict}}</text></view>
+           </view>
+           <view class='second'>
+                <text>{{order.cargoName}}：</text>
+                <text>{{order.totalNum}}件</text>
+                <text>{{order.totalWeight}}千克</text>
+                <text>{{order.totalVolume}}方</text>
+           </view>
+           <view class='third'>
+               <text>单号：</text>
+               <text>{{order.orderNo}}</text>
+              </view>
+        </view>
+        <view class='yufei'>
+           <text>预估运费：</text>
+            <text class='price'><text class='price-tag'>¥</text>{{filters.numberFixed(order.totalFee,2)}}</text>
+        </view>
+         <view class='bottom'>
+            <!-- <view wx:if='{{order.orderStatus=="8" || order.orderStatus=="9"}}'  data-item="{{order}}" bindtap='anthoerOrder' class='wuliu-track btn'>再来一单</view>
+            <view wx:if='{{order.orderStatus=="7" || order.orderStatus=="10" || order.orderStatus=="14"}}' data-item="{{order}}" bindtap="logisticsTrack" class='wuliu-track btn'>物流跟踪</view>
+            <view wx:if='{{(order.orderStatus=="7" || order.orderStatus=="8" || order.orderStatus=="9" || order.orderStatus=="10" || order.orderStatus=="14")&&(payType=="1")&&(settleType=="1" || settleType=="4")}}' data-item="{{order}}" bindtap='toPay' class='to-pay  btn'>付款</view> 
+            <view wx:if='{{order.orderStatus=="0" || order.orderStatus=="1" || order.orderStatus=="2"}}' data-item="{{order}}" bindtap="cancelOrder" class='cancel-btn btn'>取消订单</view>-->
+          <view data-item="{{order}}" bindtap='anthoerOrder' class='wuliu-track btn'>再来一单</view>
+          <view data-item="{{order}}" bindtap='logisticsTrack' class='wuliu-track btn'>物流跟踪</view>
+          <view data-item="{{order}}" bindtap='toPay' class='to-pay btn'>付款</view>
+          <view data-item="{{order}}" bindtap='cancelOrder' class='cancel-btn btn'>取消订单</view>
+        </view> 
+    </view>
+</template>

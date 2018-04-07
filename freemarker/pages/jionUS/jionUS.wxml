@@ -1,0 +1,88 @@
+<!--pages/jionUS/jionUS.wxml-->
+<import src="../../templates/address.wxml" />
+
+<view class='join-box'>
+  <view class='title'>
+    请选择加盟类型，让物流改变世界！
+  </view>
+  <view class='list'>
+    <view class='list-item'>
+      <view class='left' bindtap='checkClick' data-index='0'>
+        <image class="radio img {{showButton[0]?'hide':'show'}}" src='../../icons/icons/weixuanzhong.png'></image>
+        <image class="radio img {{showButton[0]?'show':'hide'}}"src='../../icons/icons/xuanzhong.png'></image>
+        <text class='item-text'>加盟网点</text>
+      </view>
+      <view class='right'>
+        <image class='img' src='../../icons/icons/tanhao.png'></image>
+      </view>
+    </view>
+    <view class='list-item'>
+      <view class='left' bindtap='checkClick' data-index='1'>
+        <image class="radio img {{showButton[1]?'hide':'show'}}" src='../../icons/icons/weixuanzhong.png'></image>
+        <image class="radio img {{showButton[1]?'show':'hide'}}"src='../../icons/icons/xuanzhong.png'></image>
+        <text class='item-text'>加盟线路</text>
+      </view>
+      <view class='right'>
+        <image class='img' src='../../icons/icons/tanhao.png'></image>
+      </view>
+    </view>
+    <view class='list-item border-none'>
+      <view class='left' bindtap='checkClick' data-index='2'>
+        <image class="radio img {{showButton[2]?'hide':'show'}}" src='../../icons/icons/weixuanzhong.png'></image>
+        <image class="radio img {{showButton[2]?'show':'hide'}}"src='../../icons/icons/xuanzhong.png'></image>
+        <text class='item-text'>在线销售经理</text>
+      </view>
+      <view class='right'>
+        <image class='img' src='../../icons/icons/tanhao.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='list border-none'>
+    <view class='list-item' style='padding-right:18rpx;'>
+      <view>加盟地区</view>
+      <!--地址控件-->
+       <view class='' bindtap="open">
+          <text  class='region-text' wx:if='{{!currentAddress}}'>请选择</text>
+          <text wx:if='{{currentAddress}}'>{{currentAddress}}</text>
+          <image src='../../icons/icons/youjiantou.png' class='region-icon'></image>
+       </view>
+    </view>
+    <view class='list-item border-none'>
+      <view>卡小二：宋小贱</view>
+      <image bindtap='contact' class='tel-img' src='../../icons/icons/dianhua-red.png'></image>
+    </view>
+  </view>
+  <view class='list border-none'>
+    <view class='list-item'>
+      <view>
+        <text>风险保证金</text>
+        <image class='img left-img' src='../../icons/icons/tanhao.png'></image>
+      </view>
+      <view class='right-text'>10000元</view>
+    </view>
+    <view class='list-item'>
+      <view>
+        <text>系统使用费</text>
+        <image class='img left-img' src='../../icons/icons/tanhao.png'></image>
+      </view>
+      <view class='right-text'>10000元</view>
+    </view>
+    <view class='list-item'>
+      <view>
+        <text>网络管理费</text>
+        <image class='img left-img' src='../../icons/icons/tanhao.png'></image>
+      </view>
+      <view class='right-text'>10000元</view>
+    </view>
+    <view class='list-item border-none'>
+      <view>
+        <text>总计</text>
+      </view>
+      <view class='text-orange'>10000元</view>
+    </view>
+  </view>
+  <button class='confirm orange' bindtap='commit'>提交意向</button>
+  <view class='service-tel'>咨询请拨打加盟电话 <text class='text-orange'>4001-816-816</text></view>
+</view>
+<!-- 地址控件 -->
+<template is="address" data="{{condition,provinces,citys,countys}}"/>

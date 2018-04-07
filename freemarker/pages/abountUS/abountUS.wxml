@@ -1,0 +1,38 @@
+<!--pages/abountUS/abountUS.wxml-->
+<view class='about-box'>
+  <view class='logo-box'>
+    <image class='logo' src='../../icons/icons/logo128.png'></image>
+    <view class='logo-text'>找车、找货、找专线，就是卡行货运圈</view>
+  </view>
+  <view class='list'>
+    <view class='list-item'  bindtap='goKnowUS'>
+      <image class='list-icon'></image>
+      <text class='list-text'>认识我们</text>
+      <view class='float-right'>
+        <image class='arrow' src='../../icons/icons/youjiantou.png'></image>
+      </view>
+    </view>
+    <view class='list-item'  bindtap='goJionUS'>
+      <image class='list-icon'></image>
+      <text class='list-text'>加盟我们</text>
+      <view class='float-right'>
+        <image class='arrow' src='../../icons/icons/youjiantou.png'></image>
+      </view>
+    </view>
+    <view class='list-item'  bindtap='goShare'>
+      <image class='list-icon'></image>
+      <text class='list-text'>我要分享</text>
+      <view class='float-right'>
+        <image class='arrow' src='../../icons/icons/youjiantou.png'></image>
+      </view>
+    </view>
+    <view class='list-item border-none'>
+      <image class='list-icon'></image>
+      <text class='list-text'>联系客服</text>
+      <view class='float-right' bindtap='contactService'>
+        <text class='contact-text orange-text'>4001-816-816</text>
+        <image class=' contact-icon' src='../../icons/icons/dianhua-red.png'></image>
+      </view>
+    </view>
+  </view>
+</view>

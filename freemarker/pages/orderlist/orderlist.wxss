@@ -1,0 +1,79 @@
+/* pages/orderlist/orderlist.wxss */
+@import "../../templates/order.wxss";
+@import "../../templates/ordersearchbar.wxss";
+page{
+  background: #f5f5f5;
+  height:100%;
+  overflow-y:auto; 
+}
+
+.order-status-bar{
+  display: flex;
+  width:100%;
+  background: #fff;
+  margin-top: 20rpx;
+}
+scroll-view{
+  overflow-y: auto;
+}
+.order-status{
+  flex:1;
+  text-align: center;
+  font-size: 28rpx;
+  height:80rpx;
+  line-height: 80rpx;
+  position: relative;
+}
+.order-status.active{
+  color:#ff8400;
+}
+.order-status .bar{
+  display: none;
+}
+.order-status.active .bar{
+ display: block;
+ position: absolute;
+ bottom: 0rpx;
+ width: 120rpx;
+ background: #ff8400;
+ height:4rpx;
+ left: 50%;
+ margin-left: -60rpx;
+}
+.no-login-icon{
+  width:308rpx;
+  height:234rpx;
+  margin: 180rpx auto 40rpx auto;
+  display: block;
+
+}
+.no-login-tips{
+  color:#666;
+  font-size: 28rpx;
+}
+.no-login{
+  text-align: center;
+}
+.login-btn{
+  width:180rpx;
+  background: #ff8400;
+  color:#fff;
+  font-size: 30rpx;
+  margin: 30rpx auto;
+  height:60rpx;
+  line-height: 60rpx;
+  border-radius:8rpx; 
+}
+.empty-icon{
+  width: 260rpx;
+  height:260rpx;
+  display: block;
+  margin: 0 auto;
+  margin-top: 210rpx;
+}
+.empty-text{
+  margin-top: 10rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #666;
+}

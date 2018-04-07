@@ -1,0 +1,108 @@
+/* pages/logisticstrack/logisticstrack.wxss */
+
+page {
+  background: #f5f5f5;
+}
+
+.brief {
+  padding: 30rpx;
+  background: #fff;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.brief .info {
+  margin-bottom: 30rpx;
+}
+
+.brief .status {
+  color: #ff8400;
+  font-size: 30rpx;
+  float: right;
+}
+
+.logisticstrack-detail {
+  margin-top: 20rpx;
+  background: #fff;
+  /* padding-top: 26rpx; */
+}
+
+.item {
+  position: relative;
+}
+
+.item .line {
+  /* position: absolute;
+   height:100%;
+   left:60rpx;
+   width:1rpx;
+   background: #ccc;
+   top:26rpx; */
+}
+.item .point.active{
+  background: #ffbf7a;
+  width:24rpx;
+  height:24rpx;
+  position: absolute;
+   z-index: 1;
+   border-radius:100%; 
+    top: 36rpx;
+    left:36rpx;
+}
+.item .point.active::after{
+  content:"";
+  background: #ff8400;
+  width:14rpx;
+  height:14rpx;
+  position: absolute;
+  z-index: 2;
+  border-radius:100%; 
+  top: 5.5rpx;
+  left: 5.5rpx;
+}
+.item .point {
+  position: absolute;
+  height: 14rpx;
+  left: 40rpx;
+  width: 14rpx;
+  background: #ccc;
+  top: 36rpx;
+  border-radius: 100%;
+}
+.item .line{
+   position: absolute;
+   height:100%;
+   left:46rpx;
+   width:1rpx;
+   background: #ccc;
+   top:36rpx; 
+}
+.item:last-child .line{
+  height: 0rpx;
+}
+.item .content {
+  padding-top: 26rpx;
+  
+ margin-left: 110rpx;
+  border-bottom: 1rpx solid #e6e6e6;
+}
+.item .content .conten-inner{
+  
+ 
+  
+}
+.item:last-child .content {
+  border-bottom: 0;
+}
+
+.item .content .title {
+  margin-bottom: 20rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.item .content .date {
+  padding-bottom: 26rpx;
+  color: #999;
+  font-size: 22rpx;
+}

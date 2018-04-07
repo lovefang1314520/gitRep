@@ -1,0 +1,76 @@
+<!--pages/store/store.wxml-->
+<wxs src="../../common/hourstoday.wxs" module="hourstoday" />
+<view class='store-box'>
+  <view class='store-hd'>
+    <view class='info'>
+      <view class='logo'>
+        <image src='{{storeInfos.headPortrait}}'></image>
+      </view>
+      <view class='business'>
+        <view class='tis'>{{storeInfos.name}}</view>
+        <view class='concat'>
+          <image class='small-phone-mark' src='../../icons/icons/dianhua-xiao.png'></image>
+          <text>{{storeInfos.mobile}}</text>
+          <view class='lx-box'>
+            <image class='lianxi' src='../../icons/icons/lianxita.png'></image>
+            <text data-phone='{{storeInfos.mobile}}' bindtap='callPhone'>联系Ta</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='detail'>
+      <view class='d-box'>
+        <text class='d-tis'>经营特色：</text>
+        <view class='ts_tags'>
+        <block wx:for="{{features}}" wx:key="{{index}}">
+          <text class='ts_tag'>{{item}}</text>
+          </block>
+        </view>
+      </view>
+      <view class='d-box'>
+        <text class='d-tis'>营业时间：</text>
+        <text class='d-cons'>{{storeInfos.startTime}}-{{storeInfos.endTime}}</text>
+      </view>
+      <view class='d-box'>
+        <text class='d-tis'>公司地址：</text>
+        <text class='d-cons'>{{storeInfos.address}}</text>
+      </view>
+      <view class='d-box'>
+        <text class='d-tis'>公司介绍：</text>
+        <text class='d-cons'>{{storeInfos.introduce}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='store-bd'>
+    <view class='line-names'>
+      <text>经营线路</text>
+      <text class='product-num'>共{{lineCompanyList.length}}个产品</text>
+    </view>
+    <view class='res-list'>
+      <view class='res-item'  wx:key="{{index}}" wx:for="{{lineCompanyList}}" wx:for-index="idx" wx:for-item="lineCompany">
+        <view class='tis'>
+          <text>{{lineCompany.companyName}}</text>
+        </view>
+        <view class='info'>
+          <view class='info-1'>普通</view>
+          <text class='info-2'>{{lineCompany.startStationName}}</text>
+          <view class='info-3'>
+            <image src='../../icons/icons/xianlujiantou.png'></image>
+            <text>{{hourstoday.today(lineCompany.transDuration)}}天{{hourstoday.toHourFix(lineCompany.transDuration)}}小时</text>
+          </view>
+          <view class='info-4'>
+            <view>{{lineCompany.endStationName}}</view>
+            <view class='beizhu' wx:if="{{lineCompany.isCoverageProvince}}">（{{lineCompany.endStationName}}全境）</view>
+          </view>
+        </view>
+        <view class='status'>
+          <text decode="{{true}}">价格：{{lineCompany.weightPrice}}元／千克起 &nbsp;&nbsp;&nbsp;{{lineCompany.volumnPrice}}元／方起</text>
+          <view class='btns'>
+            <view class='btn' data-order-obj='{{lineCompany}}' data-nav-url='/pages/writeorder/writeorder?source=store' data-form-url='/pages/store/store?' bindtap='navToPath'>下单</view>
+          </view>
+        </view>
+      </view>
+
+    </view>  
+  </view>
+</view>

@@ -1,0 +1,27 @@
+<!--pages/pay/pay.wxml-->
+<view class='pay-page'>
+    <view class='pay-info section'>
+    <view class='real-pay'>实付款</view>
+    <view class='real-pay-price'>
+         <text class='price-tag'>¥</text>
+         <text class='price-amount'>{{order.totalFee-(couponAmount||0)}}</text>
+    </view>
+    <view class='delivery-fee'>
+     <text class='label'>运费合计</text>
+     <text>{{order.totalFee}}</text>
+    </view>
+    <view class='coupons'>
+      <text class='label'>使用优惠</text>
+      <text class='value selected'>-¥{{couponAmount||0}}</text>
+      <!-- <text class='value'>2个优惠可用</text> -->
+      <image bindtap='gotoCoupon' class='right-jiantou' src='../../icons/icons/youjiantou.png' />
+    </view>
+   </view>
+   <view class='pay-type-title'>请选择付款方式</view>
+   <view class='section pay-type'>
+    <image class='wechatpay-icon' src='../../icons/icons/xuanzeweixinzhifu@2x.png'/>
+    <view class='wechat-text'>微信支付</view>
+     <image class='success-icon' src='../../icons/icons/gouxuan.png'/>
+    </view>
+    <view class='pay-button' bindtap='rightPay'>立即支付</view>
+</view>

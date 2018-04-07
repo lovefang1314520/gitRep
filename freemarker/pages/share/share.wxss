@@ -1,0 +1,37 @@
+/* pages/share/share.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+}
+.logo-box{
+  width: 500rpx;
+  height: 500rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  margin-left: -250rpx;
+  margin-top: -250rpx;
+
+}
+.title{
+  text-align: left;
+  width: 80%;
+  margin-left: 30rpx;
+  padding: 30rpx 0;
+  font-size: 32rpx;
+}
+.min-img{
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+  margin-right: 15rpx;
+}
+.code{
+  width: 250rpx;
+  height: 250rpx;
+  margin-top: 50rpx;
+}

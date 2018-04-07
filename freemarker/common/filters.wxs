@@ -1,0 +1,29 @@
+var filters = {
+  numFilter: function (num, type) {
+    var source= num + '';
+    var index = source.indexOf('.');
+    if (index == -1) {
+      var value = [
+        num,
+        '.00'
+      ];
+    } else {
+      var value = source.split('.');
+      value[1] = '.' + value[1];
+    }
+    console.log(value[type]);
+    return value[type];
+  },
+  numberFixed: function(num, index){
+    if (num){
+      var value = num.toFixed(index);
+    }else{
+      var value =0;
+    }
+    return value;
+  }
+}
+module.exports = {
+  numFilter: filters.numFilter,
+  numberFixed: filters.numberFixed
+}

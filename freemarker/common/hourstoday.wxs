@@ -1,0 +1,17 @@
+var hourAndDay = {
+  today : function(hours){
+    var day = hours > 24 ? Math.floor(hours/24) : 0;
+    return day;
+  },
+
+  toHourFix: function(hours){
+    var hour = hours > 24 ? Math.floor(hours % 24) : hours;
+    return hour;
+  }
+
+}
+
+module.exports = {
+  today: hourAndDay.today,
+  toHourFix: hourAndDay.toHourFix
+}

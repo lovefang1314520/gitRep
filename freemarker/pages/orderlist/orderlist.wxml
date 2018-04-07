@@ -1,0 +1,36 @@
+<!--pages/orderlist/orderlist.wxml-->
+<import src="../../components/Tips.wxml" />
+<import src="../../templates/Order.wxml" />
+<import src="../../templates/OrderSearchBar.wxml" />
+
+
+<view class='order-page'>
+   <template is="tips" data="{{isShow,title}}" />
+   <template is="order-search-bar" data="{{keywords:orderNo}}"/>
+   <view class='order-status-bar'>
+       <view data-id="{{item.id}}" bindtap='setTabActive'  class='{{item.id==selectStatus?"active order-status":"order-status"}}' wx:for="{{orderstatus}}">
+          <text data-id="{{item.id}}">{{item.status}}</text>
+           <view class='bar'></view>
+       </view>
+      
+   </view>
+   <scroll-view scroll-y style="height:{{windowHeight-100+'px'}}" bindscrolltolower='loadMore' bindscrolltoupper="refresh">
+   <view class='content {{ orders.length >=2 ? "mb20" : ""}}'>
+     <template is="order" data-itemid="{{item.id}}"  data="{{order:item,orderStatusDict}}" wx:if="{{islogin}}" wx:for="{{orders}}"/>
+   </view>
+   <view class='no-orders' wx:if="{{orders.length==0&&islogin}}">
+       <image class='.empty-icon' src="../../icons/icons/noRoute.png" />
+       <view class='empty-text'>您还没有相关订单</view>
+   </view>
+   <view wx:if="{{!islogin}}">
+      <view class='no-login'>
+         <image class='no-login-icon' src="../../icons/icons/dingdanweidenglu@2x.png" />
+         <view class='no-login-tips'>登录后即可查看我的订单</view>
+         <view class='login-btn' bindtap='gotoLogin'>立即登录</view>
+      </view>
+    </view>
+    <view wx:if='{{!moreFlg}}' style='text-align:center;color:#666;font-size:22rpx;margin:30rpx 0 0rpx;'>
+    ————    我是有底线的    ————
+    </view>
+     </scroll-view>
+</view>

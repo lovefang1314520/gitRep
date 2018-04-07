@@ -1,0 +1,44 @@
+.empty-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  align-items: center;
+  width:100%;
+  background: #fff;
+  padding: 5% 0;
+  min-height: 492rpx;
+  height:492rpx;
+}
+.empty-img-wrapper{
+  width:100%;
+  background: #fff;
+}
+.empty-text image {
+  height: 362rpx;
+  margin: 0 auto;
+  display: block;
+   width:100%;
+}
+
+.empty-text text {
+  font-size: 28rpx;
+  color: #bbb;
+  display: block;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.gotoBuy{
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  letter-spacing: 10rpx;
+  background: #fc5879;
+  width:200rpx;
+  color:#fff;
+}
+.gotoBuy::after{
+  border: 0;
+}
+.recommend-products-box{
+  padding-top: 492rpx;
+}

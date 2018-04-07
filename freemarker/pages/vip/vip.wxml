@@ -1,0 +1,45 @@
+<!--pages/vip/vip.wxml-->
+<view class="vip-box">
+  <view class='unlogin' wx:if='{{!isLogin}}' bindtap='goLogin'>
+    <view class='left'>
+      <view class='unlogin-title'>登录/注册</view>
+      <view class='unlogin-text'>登录后可享受更多优惠</view>
+    </view>
+    <image class='unlogin-img' src='../../icons/icons/jiantou-bai.png'></image>
+  </view>
+  <view class="user-info" wx:if='{{isLogin}}' bindtap='goLogin'>
+    <image src="" mode="aspectFill" class="user-img" />
+    <text class="user-name">{{tel}}</text>
+  </view>
+  <view class='list' wx:if='{{isLogin}}'>
+    <view class='list-item'  bindtap='goDeliverPlace'>
+      <text class='list-text'>常用发货地</text>
+      <view class='float-right'>
+        <image class='arrow' src='../../icons/icons/youjiantou.png'></image>
+      </view>
+    </view>
+    <view class='list-item border-none'  bindtap='goReceiptPlace'>
+      <text class='list-text'>常用收货地</text>
+      <view class='float-right'>
+        <image class='arrow' src='../../icons/icons/youjiantou.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='list'  wx:if='{{isLogin}}'>
+    <view class='list-item border-none'  bindtap='goDiscount'>
+      <text class='list-text'>我的优惠</text>
+      <view class='float-right'>
+        <text class='right-text'>{{couponsCount}}张</text>
+        <image class='arrow' src='../../icons/icons/youjiantou.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='list-item border-none'  bindtap='goAbountUS'>
+      <text class='list-text'>关于我们</text>
+      <view class='float-right'>
+        <image class='arrow' src='../../icons/icons/youjiantou.png'></image>
+      </view>
+    </view>
+  </view>
+</view>

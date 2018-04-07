@@ -1,0 +1,67 @@
+/* pages/abountUS/abountUS.wxss */
+page{
+  background-color: #f5f5f5;
+}
+.logo-box{
+  width: 100%;
+  padding: 50rpx 0;
+  background-color: #fff;
+  text-align: center;
+}
+.logo{
+  width: 154rpx;
+  height: 154rpx;
+  margin: 0 auto 40rpx;
+}
+.logo-text{
+  text-align: center;
+  font-size: 30rpx;
+}
+.list{
+  margin:20rpx 0rpx;
+  background-color: #fff;
+}
+.list-item{
+  border-bottom: 1rpx solid #e6e6e6;
+  padding: 30rpx;
+  padding-left: 0;
+  margin-left: 30rpx;
+}
+.list-text{
+  font-size: 30rpx;
+  color: #333;
+  vertical-align: middle;
+}
+.float-right{
+  float: right;
+}
+.right-text{
+  font-size: 24rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.arrow{
+  width: 44rpx;
+  height: 44rpx;
+  vertical-align: middle;
+}
+.list-icon{
+width: 24rpx;
+height: 24rpx;
+vertical-align: middle;
+}
+.contact-text{
+  font-size: 30rpx;
+  margin-right: 15rpx;
+}
+.contact-icon{
+  width: 32rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+.orange-text{
+  color: #ff8400;
+}
+.border-none{
+  border: none;
+}

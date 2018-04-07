@@ -1,0 +1,106 @@
+<!--pages/writeorder/writeorder.wxml-->
+<import src="../../components/Tips.wxml" />
+<view class='write-order-page'>
+  <template is="tips" data="{{isShow,title}}" />
+ <scroll-view scroll-y style="height:{{windowHeight+'px'}}">
+  <view class='write-order-warning' wx:if="{{saleout}}">
+    <image class='cha-hao' src="../../icons/icons/chahao.png"></image>
+    <text class='text'>很抱歉，该产品已下架，请更换产品</text>
+    <view class='re-choose' bindtap='rechoose'>重新选择</view>
+  </view>
+  <view class='address-section'>
+    <view class='start-address'>
+      <view class='top-info'>
+        <view class='main-info'>
+          <image class='point-icon start' src='../../icons/icons/qi.png'></image>
+          <text class='username'>{{fahuo.consignerName}}</text>
+          <text class='telephone'>{{fahuo.consignerMobile}}</text>
+          <view class='address'>
+          {{fahuo.consignerProvince}}
+          {{fahuo.consignerCity}}
+          {{fahuo.consignerDistrict}}
+          {{fahuo.consignerAddr}}
+          </view>
+        </view>
+        <view data-type='fahuo' bindtap='openaddress' class='right-info'>地址薄</view>
+      </view>
+      <view class='bottom-info'>
+        <!-- true 上门提货 -->
+        <text  class='delivery-text'>送到门店</text>
+        <switch data-fieldname="isPickup" checked bindchange="switch1Change" />
+      </view>
+    </view>
+    <view class='start-address m-t-22'>
+      <view class='top-info'>
+        <view class='main-info'>
+          <image class='point-icon start' src='../../icons/icons/zhong.png'></image>
+          <text class='username'>{{shouhuo.consigneeName}}</text>
+          <text class='telephone'>{{shouhuo.consigneeMobile}}</text>
+          <view class='address'>{{shouhuo.consigneeProvince}}{{shouhuo.consigneeCity}}{{shouhuo.consigneeDistrict}}{{shouhuo.consigneeAddr}}</view>
+        </view>
+        
+        <view data-type='shouhuo' bindtap='openaddress'  class='right-info'>地址薄</view>
+      </view>
+      <view class='bottom-info'>
+        <text  class='delivery-text'>客户自提</text>
+        <!-- 1.配送2.自提 -->
+        <switch data-fieldname="deliverType"  checked bindchange="switch1Change" />
+      </view>
+    </view>
+  </view>
+  <view class='m-t-22 section'>
+    <view class='item' bindtap='gotoGoods'>
+      <text>货物信息</text>
+      <image src='../../icons/icons/youjiantou.png' class='right-arrow'></image>
+    </view>
+    <view class='item' bindtap='goToSomeWords'>
+      <text>捎句话</text>
+      <image src='../../icons/icons/youjiantou.png' class='right-arrow'></image>
+    </view>
+
+  </view>
+  <view class='m-t-22 section'>
+    <view class='item'>
+      <picker  bindchange="bindPickerChange" value="{{index}}" range="{{RECEIPT_TYPES}}">
+        <view class="picker">
+          <text>回单服务</text>
+           <text class='value'>{{backSignbillType}}</text>
+          <image src='../../icons/icons/youjiantou.png' class='right-arrow'></image>
+        </view>
+      </picker>
+    </view>
+    <view class='item' bindtap='showNumberModal' >
+      <text>代收货款</text>
+      <text class='value'>{{codValue}}</text>
+      <image src='../../icons/icons/youjiantou.png' class='right-arrow'></image>
+    </view>
+  </view>
+</scroll-view>
+  <view class='order-bottom-bar'>
+    <view class='pay-fee'>
+      <view class='yugu-yunfei'>预估运费：
+        <text class='total-price'>{{transportFee}}</text>元</view>
+      <view class='small-tips'>预估运费：不包含提配和增值服务费</view>
+    </view>
+    <form bindsubmit="submitOrder" report-submit="true">
+    <button formType="submit" class='submit-order'>提交订单</button>
+    </form>
+  </view>
+  <view class='modal-wrapper' wx:if="{{isShowNumberModal}}"></view>
+  <view class='text-modal' wx:if="{{isShowNumberModal}}">
+     <view class='title'>代收货款金额
+      <image bindtap='closeNumberModal' class='close-icon' src='../../icons/icons/guanbi@2x.png'/>
+     </view>
+     <view class='input-wrapper'>
+      <input type='number' auto-focus='true' value="{{codValue}}" placeholder="请输入金额" placeholder-style='line-height:80rpx;' placeholder-class="huokuan-placeholder" bindinput="bindinput"></input>
+       <text class=''>元</text>
+      </view>
+      <view>
+         <view class='footer-button'>
+         <view  class='button-item' bindtap='closeNumberModal'>取消    </view>
+             <view class='button-item' bindtap='saveHuoKuan'>确定</view>
+         
+         </view>
+      </view>
+  </view>
+</view>

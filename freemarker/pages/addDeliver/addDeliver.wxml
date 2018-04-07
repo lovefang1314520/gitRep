@@ -1,0 +1,37 @@
+<!--pages/addDeliver/addDeliver.wxml-->
+<import src="../../components/Tips.wxml" />
+<import src="../../templates/address.wxml" />
+
+<view class='add-addr'>
+<template is="tips" data="{{isShow,title}}" />
+  <view class='list'>
+    <view class='input-box name-box'>
+      <text class='label'>发货人</text>
+      <input class='input' value='{{name}}' type='text' data-name='name' placeholder='请输入发货人姓名' bindinput='bindinput' />
+    </view>
+    <view class='input-box'>
+      <text class='label'>手机号码</text>
+      <input class='input' value='{{tel}}' type='text' data-name='tel' placeholder='请输入11位手机号码' bindinput='bindinput' />
+    </view>
+  </view>
+
+  <view class='list'>
+    <view class='input-box name-box'>
+      <text class='label'>地区</text>
+      <!--地址控件-->
+       <view class='tcity' bindtap="open">
+          <text  class='region-text' wx:if='{{!currentAddress}}'>请选择省市区</text>
+          <text wx:if='{{currentAddress}}'>{{currentAddress}}</text>
+          <image src='../../icons/icons/youjiantou.png' class='region-icon'></image>
+       </view>
+    </view>
+    <view class='input-box'>
+      <text class='label'>详细地址</text>
+      <input class='input' value='{{other}}' type='text' data-name='other' placeholder='街道、门牌号' bindinput='bindinput' />
+    </view>
+  </view>
+  <button class='save-button' bindtap='saveS'>保存</button>
+</view>
+
+<!-- 地址控件 -->
+<template is="address" data="{{condition,provinces,citys,countys}}"/>

@@ -1,0 +1,63 @@
+/* pages/somewords/somewords.wxss */
+page{
+   background: #f5f5f5;
+}
+.remark-info{
+  background: #fff;
+  padding: 30rpx;
+}
+.remarks{
+ 
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+.remark-item{
+   width:150rpx;
+   display: inline-block;
+   margin-right: 20rpx;
+  text-align: center;
+  font-size: 25rpx;
+  margin-bottom: 30rpx;
+  height:60rpx;
+  background: #f5f5f5;
+  line-height: 60rpx;
+}
+.remark-item.active{
+
+  background:#ffebdd!important;
+  color:#ff8400;
+  /* border:1rpx solid  #ff8400; */
+   box-shadow: 0 0 0 2rpx #ff8400;
+}
+textarea{
+  width:650rpx;
+  border: 1rpx solid #ccc;
+  height:160rpx;
+  border-radius:8rpx; 
+  color:#333;
+  font-size: 28rpx;
+  padding: 5rpx;
+  margin: 0 auto;
+  position: relative;
+}
+.submit-button{
+  height:80rpx;
+  background: #ff8400;
+  text-align: center;
+  line-height: 80rpx;
+  color:#fff;
+  width:90%;
+  display: block;
+  margin: 0 auto;
+   margin-top: 54rpx;
+   border-radius:8rpx; 
+   font-size: 36rpx;
+}
+.remain-label{
+  position: absolute;
+  right:20rpx;
+  bottom:20rpx;
+  color:#999;
+  font-size: 24rpx;
+}

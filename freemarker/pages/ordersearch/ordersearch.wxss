@@ -1,0 +1,39 @@
+@import "../../templates/ordersearchbar.wxss";
+@import "../../templates/order.wxss";
+page{
+  background: #f5f5f5;
+}
+.search-bar{
+  padding:20rpx 30rpx ;
+}
+.searc-result{
+  padding: 0 25rpx;
+  background: #fff;
+}
+.result-item{
+   padding: 25rpx;
+   font-size: 28rpx;
+   border-bottom: 1rpx solid #e6e6e6;
+   display: flex;
+   justify-content: space-between;
+}
+.result-item:last-child{
+  border: 0;
+}
+.no-route{
+  text-align: center;
+}
+.no-route image{
+  margin-top: 100rpx;
+  margin-bottom: 20rpx;
+  width: 260rpx;
+  height: 259rpx;
+}
+.no-txt-b{
+  font-size: 35rpx;
+  margin-bottom: 20rpx;
+}
+.no-txt-s{
+  font-size: 30rpx;
+  color: #999;
+}

@@ -1,0 +1,15 @@
+{
+  "orderList": [
+    {
+      "id": 1,
+      "companyName": "德邦物流有限公司",
+      "orderType": 1,
+      "startAddress": "上海市|长宁区",
+      "endAddress": "江苏省|南京市",
+      "piece": 100,
+      "weight": 100,
+      "volume": 10,
+      "oddNumber": "671525854521"
+    }
+  ]
+}

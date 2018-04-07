@@ -1,0 +1,41 @@
+<!--pages/preference/preference.wxml-->
+<wxs module="filters" src="../../common/filters.wxs"></wxs>
+
+<view class='coupon_box'>
+  <view class='coupon_list'>
+    <scroll-view scroll-y style="height: 500px;">
+      <view data-cutPrice='{{item.couponRule.cutPrice}}'  data-price="{{item.couponRule.fullPrice}}" data-id="{{item.couponId}}"            bindtap='setActive'
+       class="coupon_item {{((totalPrice < item.couponRule.cutPrice)&&hasSource)?'disabled':''}}" wx:for="{{coupons}}">
+        <view class='coupon_img'>
+            <image src='../../icons/icons/youhuiquan.png'></image>
+            <image src='../../icons/icons/youhuiquan-1.png' wx:if='{{false}}'></image>
+            <view class='coupon_price'>
+              <view class='f40'>¥<text class='f80'>{{item.couponRule.fullPrice}}</text></view>
+              <text class='tis'>满{{item.couponRule.cutPrice}}可用</text>
+            </view>
+        </view>
+        <view class='coupon_right'>
+          <view class='cou_1 ft32 c333333'>{{couponType[item.couponRule.couponType]}}</view>
+          <view class='cou_2 ft24 c333333'>有限期至{{item.endTime}}</view>
+          <view class='cou_3 ft20 c666666'>说明：仅线上支付，单票限用一张，不可与其他券叠加使用</view>
+        </view>
+        <image wx:if="{{selectedCouponId==item.couponId}}" class='checked' src='../../icons/icons/gouxuan.png'></image>
+      </view>
+      <view class='none-coupon' wx-if='{{coupons.length == 0}}'>
+        <view class='none-cmark-box'>
+          <image class='none-cmark' src='../../icons/icons/zanwuyouhui.png'></image>
+        </view>
+        <view class='ft28 c666666 tis'>暂无可使用优惠券</view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class='coupon_ft'>
+    <text class='ft24 c666666'>没有更多优惠券</text>
+    <view class='sx-coup ft24 c666666' data-nav-url='/pages/invalidateCoupon/invalidateCoupon' bindtap='getCoupons'>
+    查看失效优惠券
+    <image src='../../icons/icons/jiantou.png'></image>
+    </view>
+  </view>
+</view>
+

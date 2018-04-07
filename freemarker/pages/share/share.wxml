@@ -1,0 +1,11 @@
+<!--pages/share/share.wxml-->
+<view class='max-box'>
+  <view class='logo-box'>
+    <view class='title'>
+      <image class='min-img' src='../../icons/icons/logo.png'></image>
+      <text>货运圈</text>
+    </view>
+    <image class='code' src='../../icons/icons/logo128.png'></image>
+  </view>
+</view>
+

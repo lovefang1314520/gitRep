@@ -1,0 +1,118 @@
+.order{
+  
+  background: #fff;
+  margin-top:20rpx; 
+}
+.top{
+   padding: 0rpx 30rpx;
+  height:80rpx;
+  display: flex;
+  align-items: center;
+}
+.top .shop-icon{
+  width:36rpx;
+  height:32rpx;
+  margin-right: 14rpx;
+}
+.top .company-name{
+  flex:1;
+  font-size: 30rpx;
+}
+.top .status{
+  color:#ff8400;
+  font-size: 28rpx;
+
+}
+.main{
+  background: #f8f8f8;
+   padding: 30rpx 30rpx;
+}
+.main .fisrt{
+   display: flex;
+   justify-content: space-between;
+}
+.main .fisrt .point text{
+  display: block;
+  font-size: 28rpx;
+}
+.main .fisrt .point .province{
+  color:#333;
+  font-size: 30rpx;
+  margin-bottom: 16rpx;
+}
+.main .fisrt .point .city{
+  color:#666;
+}
+.main .middle-tag image{
+  width:160rpx;
+  height:12rpx;
+}
+.main .second{
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+  font-size: 30rpx;
+  color:#666;
+  display: flex;
+  justify-content: space-between;
+}
+.main  .third{
+  font-size: 30rpx;
+  color:#666;
+}
+.yufei{
+  padding-right: 30rpx;
+  height:88rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color:#333;
+  font-size: 28rpx;
+}
+.price{
+  color: #ff8400;
+  font-size: 36rpx;
+}
+.price-tag{
+font-size: 28rpx;
+margin-right: 4rpx;
+}
+.bottom{
+  border-top:1rpx solid #e6e6e6; 
+   padding: 0rpx 30rpx;
+  height:90rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.bottom .btn{
+   font-size: 28rpx;
+   height:60rpx;
+   line-height: 60rpx;
+   width:160rpx;
+   text-align: center;
+   border-radius:4rpx; 
+}
+.wuliu-track{
+   border: 1rpx solid #ff8400;
+   color:#ff8400;
+   margin-right: 20rpx;
+}
+.to-pay{
+   position: relative;
+   left: 1rpx;
+   border: 1rpx solid #ff8400;
+   color:#ff8400;
+   margin-right: 20rpx;
+}
+.bottom .cancel-btn{
+   border: 1rpx solid #666;
+   color:#666;
+   float: right;
+}
+.mb20{
+  margin-bottom: 20rpx;
+}
+.end-point{
+  text-align: right;
+}

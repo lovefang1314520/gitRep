@@ -1,0 +1,12 @@
+<template name="input-number">
+    <view class="input-number">
+        <view class="input-number-icon sub-wrapper" wx:if="{{value>0}}" data-index="{{index}}" catchtap="sub">
+           <view class='shape-btn'></view>
+        </view>
+        <text class="input-number-input " type="number" wx:if="{{value>0}}" value="">{{value}}</text>
+        <view class="input-number-icon add-wrapper" data-index="{{index}}" catchtap="add">
+           <view class='shape-btn'></view>
+           <view class='add-vert'></view>
+        </view>
+    </view>
+</template>
